@@ -1,5 +1,4 @@
-﻿using Maintenance_API.Data;
-using Maintenance_API.Model;
+﻿using Vehicle_API.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;

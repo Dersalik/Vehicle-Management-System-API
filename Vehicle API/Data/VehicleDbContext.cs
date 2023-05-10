@@ -1,7 +1,7 @@
-﻿using Maintenance_API.Model;
+﻿using Vehicle_API.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace Maintenance_API.Data
+namespace Vehicle_API.Data
 {
     public class VehicleDbContext:DbContext
     {

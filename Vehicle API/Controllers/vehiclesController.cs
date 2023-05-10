@@ -1,9 +1,9 @@
-﻿using Maintenance_API.Model;
+﻿using Vehicle_API.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Vehicle_API.Data;
 
-namespace Maintenance_API.Controllers
+namespace Vehicle_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -76,6 +76,21 @@ namespace Maintenance_API.Controllers
             
 
             Logger.LogInformation($"Updated vehicle with id {vehicle.Id}");
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (!await Repository.CheckVehicleExists(id))
+            {
+                Logger.LogInformation($"Vehicle with id {id} not found");
+                return NotFound();
+            }
+            var vehicle = await Repository.GetFirstOrDefault(v => v.Id == id);
+            Repository.Remove(vehicle);
+            await Repository.Save();
+            Logger.LogInformation($"Deleted vehicle with id {id}");
             return NoContent();
         }
     }

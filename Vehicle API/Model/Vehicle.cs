@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Maintenance_API.Model
+namespace Vehicle_API.Model
 {
     public class Vehicle
     {
