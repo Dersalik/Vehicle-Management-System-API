@@ -9,6 +9,8 @@ namespace Maintenance_API.Helpers
         public AutoMapperProfiles()
         {
              CreateMap<MaintenanceRecord, MaintenanceRecordDTO>().ReverseMap();
+            CreateMap<MaintenanceRecord, MaintenanceRecordPostDTO>().ReverseMap();
+
         }
     }
 }

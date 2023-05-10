@@ -50,7 +50,7 @@ namespace Maintenance_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(int vehicleid,[FromBody] MaintenanceRecordDTO maintenanceRecordDTO)
+        public async Task<IActionResult> Post(int vehicleid,[FromBody] MaintenanceRecordPostDTO maintenanceRecordDTO)
         {
 
             var result =await vehicleApiService.GetVehicleById(vehicleid);
