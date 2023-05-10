@@ -46,7 +46,7 @@ namespace Maintenance_API.Data
             _db.Update(entity);
         }
 
-        public async Task<bool> CheckVehicleExists(int id)
+        public async Task<bool> CheckRecordExists(int id)
         {
            return await  _db.Vehicles.AnyAsync(x => x.Id == id);
         }   

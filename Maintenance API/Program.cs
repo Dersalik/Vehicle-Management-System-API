@@ -1,5 +1,6 @@
 using Maintenance_API.Data;
 using Maintenance_API.Helpers;
+using Maintenance_API.Services;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Enrichers.Span;
@@ -32,6 +33,16 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<MaintenanceDbContext>(options => options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<IRepository, Repository>();
+
+builder.Services.AddHttpClient("VehicleAPI", config =>
+{
+    config.BaseAddress = new Uri("https://localhost:7266/api/");
+    config.Timeout = new TimeSpan(0, 0, 30);
+    
+    config.DefaultRequestHeaders.Clear();
+}); 
+builder.Services.AddScoped<IVehicleApiService, VehicleApiService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -8,6 +8,7 @@ using Vehicle_API.DTO;
 namespace Vehicle_API.Controllers
 {
     [Route("api/[controller]")]
+    [ApiVersion("1.0")]
     [ApiController]
     public class vehiclesController : ControllerBase
     {

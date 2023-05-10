@@ -5,12 +5,12 @@ namespace Maintenance_API.Services
 {
     public class VehicleApiService : IVehicleApiService
     {
-        private readonly HttpClient _httpClient;
+        private readonly IHttpClientFactory _httpClientFactory;
         private readonly ILogger<VehicleApiService> _logger;
 
-        public VehicleApiService(HttpClient httpClient, ILogger<VehicleApiService> logger)
+        public VehicleApiService(IHttpClientFactory httpClientFactory, ILogger<VehicleApiService> logger)
         {
-            _httpClient = httpClient;
+            _httpClientFactory = httpClientFactory;
             _logger = logger;
         }
 
@@ -18,7 +18,8 @@ namespace Maintenance_API.Services
         {
             try
             {
-                var response = await _httpClient.GetAsync($"api/vehicles/{id}");
+                var httpClient = _httpClientFactory.CreateClient("VehicleAPI");
+                var response = await httpClient.GetAsync($"/vehicles/{id}");
 
                 if (!response.IsSuccessStatusCode)
                 {
@@ -27,7 +28,7 @@ namespace Maintenance_API.Services
                 }
 
                 var content = await response.Content.ReadAsStringAsync();
-                var vehicle = JsonConvert.DeserializeObject<Vehicle>(content);
+                var vehicle = JsonConvert.DeserializeObject<VehicleDTO>(content);
 
                 _logger.LogInformation($"Retrieved vehicle with id {id}");
                 return vehicle;

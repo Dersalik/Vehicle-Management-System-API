@@ -12,7 +12,7 @@ namespace Maintenance_API.Data
         Task<IEnumerable<MaintenanceRecord>> GetAll();
         public EntityEntry<MaintenanceRecord> Remove(MaintenanceRecord entity);
         public Task<int> Save();
-        public  Task<bool> CheckVehicleExists(int id);
+        public  Task<bool> CheckRecordExists(int id);
 
         void UpdateEntity(MaintenanceRecord entity);
         Task<IEnumerable<MaintenanceRecord>> Where(Expression<Func<MaintenanceRecord, bool>> predicate);
