@@ -1,6 +1,7 @@
 using Maintenance_API.Data;
 using Maintenance_API.Helpers;
 using Maintenance_API.Services;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Enrichers.Span;
@@ -26,6 +27,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddApiVersioning(options => {
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
+    options.ApiVersionReader = new UrlSegmentApiVersionReader();
+    options.ReportApiVersions = true;
+});
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 

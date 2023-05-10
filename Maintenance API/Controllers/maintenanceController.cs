@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Maintenance_API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/vehicles/{id}/maintenance")]
+    [ApiVersion("1.0")]
     [ApiController]
     public class maintenanceController : ControllerBase
     {
