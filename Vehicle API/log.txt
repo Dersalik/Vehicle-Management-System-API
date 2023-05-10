@@ -358,3 +358,69 @@ WHERE [v].[Id] = @__vehicleid_0
 2023-05-10 23:48:35.490 +03:00 [INF] Executed action Vehicle_API.Controllers.vehiclesController.Get (Vehicle API) in 44.0758ms
 2023-05-10 23:48:35.491 +03:00 [INF] Executed endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
 2023-05-10 23:48:35.491 +03:00 [INF] Request finished HTTP/1.0 GET https://localhost:7266/api/v1.0/vehicles/2 - - - 200 - application/json;+charset=utf-8 54.8128ms
+2023-05-10 23:50:04.412 +03:00 [INF] Now listening on: https://localhost:7266
+2023-05-10 23:50:04.439 +03:00 [INF] Now listening on: http://localhost:5170
+2023-05-10 23:50:04.444 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 23:50:04.446 +03:00 [INF] Hosting environment: Development
+2023-05-10 23:50:04.447 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Vehicle API\
+2023-05-10 23:50:05.694 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+2023-05-10 23:50:06.217 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 525.7645ms
+2023-05-10 23:50:06.623 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+2023-05-10 23:50:07.019 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 395.9608ms
+2023-05-10 23:50:07.096 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+2023-05-10 23:50:07.273 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 176.8526ms
+2023-05-10 23:50:30.769 +03:00 [INF] Request starting HTTP/1.0 GET https://localhost:7266/api/v1.0/vehicles/2 - -
+2023-05-10 23:50:30.781 +03:00 [INF] Executing endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
+2023-05-10 23:50:30.811 +03:00 [INF] Route matched with {action = "Get", controller = "vehicles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(Int32) on controller Vehicle_API.Controllers.vehiclesController (Vehicle API).
+2023-05-10 23:50:32.583 +03:00 [INF] Executed DbCommand (80ms) [Parameters=[@__vehicleid_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Make], [v].[Model], [v].[VIN], [v].[year]
+FROM [Vehicles] AS [v]
+WHERE [v].[Id] = @__vehicleid_0
+2023-05-10 23:50:32.705 +03:00 [INF] Executing OkObjectResult, writing value of type 'Vehicle_API.Model.Vehicle'.
+2023-05-10 23:50:32.726 +03:00 [INF] Executed action Vehicle_API.Controllers.vehiclesController.Get (Vehicle API) in 1908.8741ms
+2023-05-10 23:50:32.728 +03:00 [INF] Executed endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
+2023-05-10 23:50:32.742 +03:00 [INF] Request finished HTTP/1.0 GET https://localhost:7266/api/v1.0/vehicles/2 - - - 200 - application/json;+charset=utf-8 1973.0538ms
+2023-05-10 23:53:00.555 +03:00 [INF] Now listening on: https://localhost:7266
+2023-05-10 23:53:00.587 +03:00 [INF] Now listening on: http://localhost:5170
+2023-05-10 23:53:00.595 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 23:53:00.597 +03:00 [INF] Hosting environment: Development
+2023-05-10 23:53:00.598 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Vehicle API\
+2023-05-10 23:53:01.629 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+2023-05-10 23:53:02.058 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 430.9887ms
+2023-05-10 23:53:02.289 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+2023-05-10 23:53:02.352 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 62.6086ms
+2023-05-10 23:53:02.594 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+2023-05-10 23:53:02.759 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 164.9321ms
+2023-05-10 23:53:42.175 +03:00 [INF] Request starting HTTP/1.0 GET https://localhost:7266/api/v1.0/vehicles/2 - -
+2023-05-10 23:53:42.188 +03:00 [INF] Executing endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
+2023-05-10 23:53:42.220 +03:00 [INF] Route matched with {action = "Get", controller = "vehicles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(Int32) on controller Vehicle_API.Controllers.vehiclesController (Vehicle API).
+2023-05-10 23:53:44.063 +03:00 [INF] Executed DbCommand (90ms) [Parameters=[@__vehicleid_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Make], [v].[Model], [v].[VIN], [v].[year]
+FROM [Vehicles] AS [v]
+WHERE [v].[Id] = @__vehicleid_0
+2023-05-10 23:53:44.178 +03:00 [INF] Executing OkObjectResult, writing value of type 'Vehicle_API.Model.Vehicle'.
+2023-05-10 23:53:44.201 +03:00 [INF] Executed action Vehicle_API.Controllers.vehiclesController.Get (Vehicle API) in 1975.2736ms
+2023-05-10 23:53:44.204 +03:00 [INF] Executed endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
+2023-05-10 23:53:44.218 +03:00 [INF] Request finished HTTP/1.0 GET https://localhost:7266/api/v1.0/vehicles/2 - - - 200 - application/json;+charset=utf-8 2042.8680ms
+2023-05-10 23:55:15.985 +03:00 [INF] Now listening on: https://localhost:7266
+2023-05-10 23:55:16.033 +03:00 [INF] Now listening on: http://localhost:5170
+2023-05-10 23:55:16.039 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 23:55:16.041 +03:00 [INF] Hosting environment: Development
+2023-05-10 23:55:16.042 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Vehicle API\
+2023-05-10 23:55:17.061 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+2023-05-10 23:55:17.519 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 460.0331ms
+2023-05-10 23:55:17.774 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+2023-05-10 23:55:17.796 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 21.9655ms
+2023-05-10 23:55:18.102 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+2023-05-10 23:55:18.252 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 150.0015ms
+2023-05-10 23:55:29.053 +03:00 [INF] Request starting HTTP/1.0 GET https://localhost:7266/api/v1.0/vehicles/2 - -
+2023-05-10 23:55:29.065 +03:00 [INF] Executing endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
+2023-05-10 23:55:29.096 +03:00 [INF] Route matched with {action = "Get", controller = "vehicles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(Int32) on controller Vehicle_API.Controllers.vehiclesController (Vehicle API).
+2023-05-10 23:55:30.777 +03:00 [INF] Executed DbCommand (77ms) [Parameters=[@__vehicleid_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Make], [v].[Model], [v].[VIN], [v].[year]
+FROM [Vehicles] AS [v]
+WHERE [v].[Id] = @__vehicleid_0
+2023-05-10 23:55:30.891 +03:00 [INF] Executing OkObjectResult, writing value of type 'Vehicle_API.Model.Vehicle'.
+2023-05-10 23:55:30.912 +03:00 [INF] Executed action Vehicle_API.Controllers.vehiclesController.Get (Vehicle API) in 1809.9368ms
+2023-05-10 23:55:30.915 +03:00 [INF] Executed endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
+2023-05-10 23:55:30.929 +03:00 [INF] Request finished HTTP/1.0 GET https://localhost:7266/api/v1.0/vehicles/2 - - - 200 - application/json;+charset=utf-8 1875.5465ms

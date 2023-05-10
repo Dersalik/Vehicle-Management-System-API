@@ -71,7 +71,7 @@ namespace Maintenance_API.Controllers
             await Repository.Add(maintenanceRecord);
             await Repository.Save();
             Logger.LogInformation($"Added vehicle with id {maintenanceRecord.Id}");
-            return CreatedAtAction(nameof(Get), new { maintenanceid = maintenanceRecord.Id });
+            return CreatedAtAction(nameof(Get), new { vehicleid=vehicleid, maintenanceid = maintenanceRecord.Id },maintenanceRecord);
         }
 
         [HttpPut("{maintenanceid}")]

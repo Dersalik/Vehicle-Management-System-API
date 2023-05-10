@@ -506,3 +506,137 @@ System.InvalidOperationException: No route matches the supplied values.
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
 2023-05-10 23:48:35.517 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7233/api/v1/vehicles/2/maintenance application/json 98 - 500 - text/plain;+charset=utf-8 2343.0188ms
+2023-05-10 23:50:04.446 +03:00 [INF] Now listening on: https://localhost:7233
+2023-05-10 23:50:04.471 +03:00 [INF] Now listening on: http://localhost:5105
+2023-05-10 23:50:04.476 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 23:50:04.477 +03:00 [INF] Hosting environment: Development
+2023-05-10 23:50:04.478 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Maintenance API\
+2023-05-10 23:50:05.695 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/index.html - -
+2023-05-10 23:50:06.228 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/index.html - - - 200 - text/html;charset=utf-8 536.2422ms
+2023-05-10 23:50:06.605 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/_vs/browserLink - -
+2023-05-10 23:50:06.995 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 390.3577ms
+2023-05-10 23:50:07.094 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - -
+2023-05-10 23:50:07.266 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 172.1032ms
+2023-05-10 23:50:29.758 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7233/api/v1/vehicles/2/maintenance application/json 98
+2023-05-10 23:50:29.775 +03:00 [INF] Executing endpoint 'Maintenance_API.Controllers.maintenancesController.Post (Maintenance API)'
+2023-05-10 23:50:29.806 +03:00 [INF] Route matched with {action = "Post", controller = "maintenances"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Post(Int32, Maintenance_API.DTO.MaintenanceRecordDTO) on controller Maintenance_API.Controllers.maintenancesController (Maintenance API).
+2023-05-10 23:50:30.689 +03:00 [INF] Start processing HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-10 23:50:30.696 +03:00 [INF] Sending HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-10 23:50:32.730 +03:00 [INF] Received HTTP response headers after 2030.3352ms - 200
+2023-05-10 23:50:32.733 +03:00 [INF] End processing HTTP request after 2049.6791ms - 200
+2023-05-10 23:50:32.878 +03:00 [INF] Retrieved vehicle with id 2
+2023-05-10 23:50:33.601 +03:00 [INF] Executed DbCommand (83ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vehicles] ([Cost], [Date], [ServiceType], [VehicleId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2023-05-10 23:50:33.686 +03:00 [INF] Added vehicle with id 7
+2023-05-10 23:50:33.696 +03:00 [INF] Executing CreatedAtActionResult, writing value of type '<>f__AnonymousType0`1[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-05-10 23:50:33.725 +03:00 [INF] Executed action Maintenance_API.Controllers.maintenancesController.Post (Maintenance API) in 3913.7744ms
+2023-05-10 23:50:33.728 +03:00 [INF] Executed endpoint 'Maintenance_API.Controllers.maintenancesController.Post (Maintenance API)'
+2023-05-10 23:50:33.733 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-05-10 23:50:33.788 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7233/api/v1/vehicles/2/maintenance application/json 98 - 500 - text/plain;+charset=utf-8 4030.2290ms
+2023-05-10 23:53:00.597 +03:00 [INF] Now listening on: https://localhost:7233
+2023-05-10 23:53:00.626 +03:00 [INF] Now listening on: http://localhost:5105
+2023-05-10 23:53:00.631 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 23:53:00.633 +03:00 [INF] Hosting environment: Development
+2023-05-10 23:53:00.634 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Maintenance API\
+2023-05-10 23:53:01.634 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/index.html - -
+2023-05-10 23:53:02.070 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/index.html - - - 200 - text/html;charset=utf-8 438.9361ms
+2023-05-10 23:53:02.320 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/_vs/browserLink - -
+2023-05-10 23:53:02.359 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 38.7862ms
+2023-05-10 23:53:02.601 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - -
+2023-05-10 23:53:02.768 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 166.4490ms
+2023-05-10 23:53:41.097 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7233/api/v1/vehicles/2/maintenance application/json 98
+2023-05-10 23:53:41.114 +03:00 [INF] Executing endpoint 'Maintenance_API.Controllers.maintenancesController.Post (Maintenance API)'
+2023-05-10 23:53:41.148 +03:00 [INF] Route matched with {action = "Post", controller = "maintenances"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Post(Int32, Maintenance_API.DTO.MaintenanceRecordDTO) on controller Maintenance_API.Controllers.maintenancesController (Maintenance API).
+2023-05-10 23:53:42.085 +03:00 [INF] Start processing HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-10 23:53:42.092 +03:00 [INF] Sending HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-10 23:53:44.206 +03:00 [INF] Received HTTP response headers after 2109.8563ms - 200
+2023-05-10 23:53:44.209 +03:00 [INF] End processing HTTP request after 2128.8096ms - 200
+2023-05-10 23:53:44.351 +03:00 [INF] Retrieved vehicle with id 2
+2023-05-10 23:53:45.063 +03:00 [INF] Executed DbCommand (83ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vehicles] ([Cost], [Date], [ServiceType], [VehicleId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2023-05-10 23:53:45.146 +03:00 [INF] Added vehicle with id 8
+2023-05-10 23:53:45.157 +03:00 [INF] Executing CreatedAtActionResult, writing value of type '<>f__AnonymousType0`1[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-05-10 23:53:45.186 +03:00 [INF] Executed action Maintenance_API.Controllers.maintenancesController.Post (Maintenance API) in 4031.9927ms
+2023-05-10 23:53:45.189 +03:00 [INF] Executed endpoint 'Maintenance_API.Controllers.maintenancesController.Post (Maintenance API)'
+2023-05-10 23:53:45.194 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-05-10 23:53:45.250 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7233/api/v1/vehicles/2/maintenance application/json 98 - 500 - text/plain;+charset=utf-8 4152.4546ms
+2023-05-10 23:55:16.028 +03:00 [INF] Now listening on: https://localhost:7233
+2023-05-10 23:55:16.059 +03:00 [INF] Now listening on: http://localhost:5105
+2023-05-10 23:55:16.067 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 23:55:16.069 +03:00 [INF] Hosting environment: Development
+2023-05-10 23:55:16.070 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Maintenance API\
+2023-05-10 23:55:17.061 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/index.html - -
+2023-05-10 23:55:17.512 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/index.html - - - 200 - text/html;charset=utf-8 453.3188ms
+2023-05-10 23:55:17.741 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/_vs/browserLink - -
+2023-05-10 23:55:17.765 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 23.3040ms
+2023-05-10 23:55:18.022 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - -
+2023-05-10 23:55:18.187 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 164.5648ms
+2023-05-10 23:55:27.953 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7233/api/v1/vehicles/2/maintenance application/json 98
+2023-05-10 23:55:27.965 +03:00 [INF] Executing endpoint 'Maintenance_API.Controllers.maintenancesController.Post (Maintenance API)'
+2023-05-10 23:55:27.999 +03:00 [INF] Route matched with {action = "Post", controller = "maintenances"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Post(Int32, Maintenance_API.DTO.MaintenanceRecordDTO) on controller Maintenance_API.Controllers.maintenancesController (Maintenance API).
+2023-05-10 23:55:28.976 +03:00 [INF] Start processing HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-10 23:55:28.982 +03:00 [INF] Sending HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-10 23:55:30.917 +03:00 [INF] Received HTTP response headers after 1930.4268ms - 200
+2023-05-10 23:55:30.920 +03:00 [INF] End processing HTTP request after 1948.7011ms - 200
+2023-05-10 23:55:31.066 +03:00 [INF] Retrieved vehicle with id 2
+2023-05-10 23:55:31.764 +03:00 [INF] Executed DbCommand (85ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vehicles] ([Cost], [Date], [ServiceType], [VehicleId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2023-05-10 23:55:31.844 +03:00 [INF] Added vehicle with id 9
+2023-05-10 23:55:31.855 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'Maintenance_API.Model.MaintenanceRecord'.
+2023-05-10 23:55:31.909 +03:00 [INF] Executed action Maintenance_API.Controllers.maintenancesController.Post (Maintenance API) in 3903.4602ms
+2023-05-10 23:55:31.911 +03:00 [INF] Executed endpoint 'Maintenance_API.Controllers.maintenancesController.Post (Maintenance API)'
+2023-05-10 23:55:31.925 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7233/api/v1/vehicles/2/maintenance application/json 98 - 201 - application/json;+charset=utf-8 3972.4270ms
