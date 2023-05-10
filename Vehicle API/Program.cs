@@ -3,7 +3,8 @@ using Vehicle_API.Data;
 using Serilog;
 using Serilog.Enrichers.Span;
 using Serilog.Exceptions;
-
+using Vehicle_API.Helpers;
+using AutoMapper;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Logging.ClearProviders();
@@ -18,6 +19,7 @@ builder.Host.UseSerilog((context, loggerConfig) => {
     .WriteTo.File("log.txt");
 
 });
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
