@@ -1,10 +1,24 @@
 using Maintenance_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Vehicle_API.Data;
+using Serilog;
+using Serilog.Enrichers.Span;
+using Serilog.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddMemoryCache();
+
+builder.Host.UseSerilog((context, loggerConfig) => {
+    loggerConfig
+    .ReadFrom.Configuration(context.Configuration)
+    .WriteTo.Console()
+    .Enrich.WithExceptionDetails()
+    .Enrich.FromLogContext()
+    .Enrich.With<ActivityEnricher>()
+    .WriteTo.File("log.txt");
+
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

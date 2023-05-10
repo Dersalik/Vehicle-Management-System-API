@@ -11,6 +11,8 @@ namespace Vehicle_API.Data
         public Task<Vehicle> GetFirstOrDefault(Expression<Func<Vehicle, bool>> filter);
         Task<IEnumerable<Vehicle>> GetAll();
         public EntityEntry<Vehicle> Remove(Vehicle entity);
+        public Task<int> Save();
+        public  Task<bool> CheckVehicleExists(int id);
 
         void UpdateEntity(Vehicle entity);
         Task<IEnumerable<Vehicle>> Where(Expression<Func<Vehicle, bool>> predicate);

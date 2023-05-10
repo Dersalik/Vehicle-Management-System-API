@@ -47,9 +47,18 @@ namespace Vehicle_API.Data
             _db.Update(entity);
         }
 
+        public async Task<bool> CheckVehicleExists(int id)
+        {
+           return await  _db.Vehicles.AnyAsync(x => x.Id == id);
+        }   
         public async Task<IEnumerable<Vehicle>> Where(Expression<Func<Vehicle, bool>> predicate)
         {
             return await dbSet.Where(predicate).ToListAsync();
+        }
+        public async  Task<int> Save()
+        {
+    
+           return  await  _db.SaveChangesAsync();
         }
     }
 }
