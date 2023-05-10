@@ -7,7 +7,7 @@ using Serilog.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddMemoryCache();
+builder.Logging.ClearProviders();
 
 builder.Host.UseSerilog((context, loggerConfig) => {
     loggerConfig
