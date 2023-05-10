@@ -7,7 +7,7 @@ using Vehicle_API.DTO;
 
 namespace Vehicle_API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("1.0")]
     [ApiController]
     public class vehiclesController : ControllerBase
@@ -33,13 +33,13 @@ namespace Vehicle_API.Controllers
             return Ok(vehicles);
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("{vehicleid}")]
+        public async Task<IActionResult> Get(int vehicleid)
         {
-            var vehicle = await Repository.GetFirstOrDefault(v => v.Id == id);
+            var vehicle = await Repository.GetFirstOrDefault(v => v.Id == vehicleid);
             if (vehicle == null)
             {
-                Logger.LogInformation($"Vehicle with id {id} not found");
+                Logger.LogInformation($"Vehicle with id {vehicleid} not found");
                 return NotFound();
             }
             return Ok(vehicle);
@@ -58,11 +58,11 @@ namespace Vehicle_API.Controllers
             await Repository.Save();
 
             Logger.LogInformation($"Added vehicle with id {vehicle.Id}");
-            return CreatedAtAction(nameof(Get), new { id = vehicle.Id }, vehicle);
+            return CreatedAtAction(nameof(Get), new { vehicleid = vehicle.Id }, vehicle);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] VehicleDTO vehicleDTO)
+        [HttpPut("{vehicleid}")]
+        public async Task<IActionResult> Put(int vehicleid, [FromBody] VehicleDTO vehicleDTO)
         {
             if (!ModelState.IsValid)
             {
@@ -70,9 +70,9 @@ namespace Vehicle_API.Controllers
                 return BadRequest(ModelState);
             }
 
-            if(!await Repository.CheckVehicleExists(id))
+            if(!await Repository.CheckVehicleExists(vehicleid))
             {
-                Logger.LogInformation($"Vehicle with id {id} not found");
+                Logger.LogInformation($"Vehicle with id {vehicleid} not found");
                 return NotFound();
             }
             var vehicle = Mapper.Map<Vehicle>(vehicleDTO);
@@ -86,18 +86,18 @@ namespace Vehicle_API.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        [HttpDelete("{vehicleid}")]
+        public async Task<IActionResult> Delete(int vehicleid)
         {
-            if (!await Repository.CheckVehicleExists(id))
+            if (!await Repository.CheckVehicleExists(vehicleid))
             {
-                Logger.LogInformation($"Vehicle with id {id} not found");
+                Logger.LogInformation($"Vehicle with id {vehicleid} not found");
                 return NotFound();
             }
-            var vehicle = await Repository.GetFirstOrDefault(v => v.Id == id);
+            var vehicle = await Repository.GetFirstOrDefault(v => v.Id == vehicleid);
             Repository.Remove(vehicle);
             await Repository.Save();
-            Logger.LogInformation($"Deleted vehicle with id {id}");
+            Logger.LogInformation($"Deleted vehicle with id {vehicleid}");
             return NoContent();
         }
     }

@@ -5,6 +5,8 @@ using Serilog.Enrichers.Span;
 using Serilog.Exceptions;
 using Vehicle_API.Helpers;
 using AutoMapper;
+using Microsoft.AspNetCore.Mvc.Versioning;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Logging.ClearProviders();

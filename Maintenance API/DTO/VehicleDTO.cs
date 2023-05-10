@@ -9,7 +9,7 @@ namespace Maintenance_API.DTO
         [Required]
         public string Model { get; set; }
         [Required]
-        public DateTime year { get; set; }
+        public int year { get; set; }
         [Required]
         public string VIN { get; set; }
     }

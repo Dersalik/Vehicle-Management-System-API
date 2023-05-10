@@ -1,6 +1,7 @@
 using Maintenance_API.Data;
 using Maintenance_API.Helpers;
 using Maintenance_API.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -31,7 +32,10 @@ builder.Services.AddApiVersioning(options => {
     options.AssumeDefaultVersionWhenUnspecified = true;
     options.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
     options.ApiVersionReader = new UrlSegmentApiVersionReader();
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+    options.AssumeDefaultVersionWhenUnspecified = true;
     options.ReportApiVersions = true;
+
 });
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
@@ -43,9 +47,9 @@ builder.Services.AddScoped<IRepository, Repository>();
 
 builder.Services.AddHttpClient("VehicleAPI", config =>
 {
-    config.BaseAddress = new Uri("https://localhost:7266/api/");
+    config.BaseAddress = new Uri("https://localhost:7266");
     config.Timeout = new TimeSpan(0, 0, 30);
-    
+    config.DefaultRequestVersion= new Version(1, 0);
     config.DefaultRequestHeaders.Clear();
 }); 
 builder.Services.AddScoped<IVehicleApiService, VehicleApiService>();

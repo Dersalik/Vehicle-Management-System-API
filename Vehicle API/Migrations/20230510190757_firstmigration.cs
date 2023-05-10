@@ -1,12 +1,11 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace Vehicle_API.Migrations
 {
     /// <inheritdoc />
-    public partial class first : Migration
+    public partial class firstmigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,7 +18,7 @@ namespace Vehicle_API.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Make = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    year = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    year = table.Column<int>(type: "int", nullable: false),
                     VIN = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>

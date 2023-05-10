@@ -19,7 +19,7 @@ namespace Maintenance_API.Services
             try
             {
                 var httpClient = _httpClientFactory.CreateClient("VehicleAPI");
-                var response = await httpClient.GetAsync($"/vehicles/{id}");
+                var response = await httpClient.GetAsync($"/api/v1.0/vehicles/{id}");
 
                 if (!response.IsSuccessStatusCode)
                 {

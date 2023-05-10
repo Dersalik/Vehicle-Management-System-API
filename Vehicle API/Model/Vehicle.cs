@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Vehicle_API.Validation_attribute;
 
 namespace Vehicle_API.Model
 {
@@ -10,7 +11,8 @@ namespace Vehicle_API.Model
         [Required]
         public string Model { get; set; }
         [Required]
-        public DateTime year { get; set; }
+        [YearRangeAttribute]
+        public int year { get; set; }
         [Required]
         public string VIN { get; set; }
     }
