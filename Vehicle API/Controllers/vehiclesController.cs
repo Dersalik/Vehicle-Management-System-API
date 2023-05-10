@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Vehicle_API.Data;
+using AutoMapper;
+using Vehicle_API.DTO;
 
 namespace Vehicle_API.Controllers
 {
@@ -11,10 +13,15 @@ namespace Vehicle_API.Controllers
     {
         IRepository Repository { get; set; } 
         ILogger<vehiclesController> Logger;
-        public vehiclesController(IRepository repository,ILogger<vehiclesController> logger)
+        private IMapper Mapper
+        {
+            get;
+        }
+        public vehiclesController(IRepository repository,ILogger<vehiclesController> logger,IMapper mapper)
         {
             Repository = repository;
             Logger = logger;
+            Mapper = mapper;
         }
 
         [HttpGet]
@@ -38,31 +45,28 @@ namespace Vehicle_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Vehicle vehicle)
+        public async Task<IActionResult> Post([FromBody] VehicleDTO vehicleDTO)
         {
             if (!ModelState.IsValid)
             {
                 Logger.LogInformation($"Invalid vehicle data");
                 return BadRequest(ModelState);
             }
+            var vehicle = Mapper.Map<Vehicle>(vehicleDTO);  
             await Repository.Add(vehicle);
             await Repository.Save();
+
             Logger.LogInformation($"Added vehicle with id {vehicle.Id}");
             return CreatedAtAction(nameof(Get), new { id = vehicle.Id }, vehicle);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] Vehicle vehicle)
+        public async Task<IActionResult> Put(int id, [FromBody] VehicleDTO vehicleDTO)
         {
             if (!ModelState.IsValid)
             {
                 Logger.LogInformation($"Invalid vehicle data");
                 return BadRequest(ModelState);
-            }
-            if (id != vehicle.Id)
-            {
-                Logger.LogInformation($"Vehicle id {id} does not match vehicle id {vehicle.Id}");
-                return BadRequest();
             }
 
             if(!await Repository.CheckVehicleExists(id))
@@ -70,8 +74,10 @@ namespace Vehicle_API.Controllers
                 Logger.LogInformation($"Vehicle with id {id} not found");
                 return NotFound();
             }
+            var vehicle = Mapper.Map<Vehicle>(vehicleDTO);
 
-                Repository.UpdateEntity(vehicle);
+
+            Repository.UpdateEntity(vehicle);
                 await Repository.Save();
             
 
