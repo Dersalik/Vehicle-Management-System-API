@@ -27,29 +27,61 @@ namespace Maintenance_API.Controllers
             Mapper = mapper;
             this.vehicleApiService = vehicleApiService;
         }
-
+        /// <summary>
+        /// gets all maintenance records for a vehicle
+        /// </summary>
+        /// <param name="vehicleid"></param>
+        /// <returns></returns>
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<MaintenanceRecord>), 200)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAll(int vehicleid)
         {
 
-            var vehicles = await Repository.Where(d=>d.VehicleId==vehicleid);
-            Logger.LogInformation($"Retrieved {vehicles.Count()} vehicles");
-            return Ok(vehicles);
-        }
+            var maintenancerecords = await Repository.Where(d=>d.VehicleId==vehicleid);
 
+            if(maintenancerecords == null)
+            {
+                Logger.LogInformation($"Vehicle with id {vehicleid} not found");
+                return NotFound($"Vehicle with id {vehicleid} was not found");
+            }   
+
+            Logger.LogInformation($"Retrieved {maintenancerecords.Count()} vehicles");
+            return Ok(maintenancerecords);
+        }
+        /// <summary>
+        /// gets a maintenance record by id for a vehicle
+        /// </summary>
+        /// <param name="maintenanceid"></param>
+        /// <returns></returns>
         [HttpGet("{maintenanceid}")]
-        public async Task<IActionResult> Get(int maintenanceid)
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(MaintenanceRecord),StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> Get(int vehicleid, int maintenanceid)
         {
-            var vehicle = await Repository.GetFirstOrDefault(v => v.Id == maintenanceid);
-            if (vehicle == null)
+
+
+            var maintenanceRecord = await Repository.GetFirstOrDefault(v => v.Id == maintenanceid && v.VehicleId== vehicleid);
+            if (maintenanceRecord == null)
             {
                 Logger.LogInformation($"Vehicle with id {maintenanceid} not found");
                 return NotFound();
             }
-            return Ok(vehicle);
+            return Ok(maintenanceRecord);
         }
-
+        /// <summary>
+        /// Assigns a new maintenance record to a vehicle
+        /// </summary>
+        /// <param name="vehicleid"></param>
+        /// <param name="maintenanceRecordDTO"></param>
+        /// <returns></returns>
         [HttpPost]
+        [ProducesResponseType(typeof(MaintenanceRecord),StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Post(int vehicleid,[FromBody] MaintenanceRecordPostDTO maintenanceRecordDTO)
         {
 
@@ -73,8 +105,17 @@ namespace Maintenance_API.Controllers
             Logger.LogInformation($"Added vehicle with id {maintenanceRecord.Id}");
             return CreatedAtAction(nameof(Get), new { vehicleid=vehicleid, maintenanceid = maintenanceRecord.Id },maintenanceRecord);
         }
-
+        /// <summary>
+        /// updates a maintenance record for a vehicle
+        /// </summary>
+        /// <param name="maintenanceid"></param>
+        /// <param name="maintenanceRecordDTO"></param>
+        /// <returns></returns>
         [HttpPut("{maintenanceid}")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Put(int maintenanceid, [FromBody] MaintenanceRecordDTO maintenanceRecordDTO)
         {
             if (!ModelState.IsValid)
@@ -97,8 +138,15 @@ namespace Maintenance_API.Controllers
             Logger.LogInformation($"Updated vehicle with id {maintenanceRecord.Id}");
             return NoContent();
         }
-
+        /// <summary>
+        /// Deletes a maintenance record for a vehicle
+        /// </summary>
+        /// <param name="maintenanceid"></param>
+        /// <returns></returns>
         [HttpDelete("{maintenanceid}")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Delete(int maintenanceid)
         {
             if (!await Repository.CheckRecordExists(maintenanceid))
