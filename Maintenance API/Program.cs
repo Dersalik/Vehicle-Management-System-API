@@ -1,4 +1,5 @@
 using Maintenance_API.Data;
+using Maintenance_API.Filters;
 using Maintenance_API.Helpers;
 using Maintenance_API.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -23,8 +24,10 @@ builder.Host.UseSerilog((context, loggerConfig) => {
 });
 // Add services to the container.
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<HttpResponseExceptionFilter>();
+});// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

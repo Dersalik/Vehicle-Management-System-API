@@ -640,3 +640,14 @@ VALUES (@p0, @p1, @p2, @p3);
 2023-05-10 23:55:31.909 +03:00 [INF] Executed action Maintenance_API.Controllers.maintenancesController.Post (Maintenance API) in 3903.4602ms
 2023-05-10 23:55:31.911 +03:00 [INF] Executed endpoint 'Maintenance_API.Controllers.maintenancesController.Post (Maintenance API)'
 2023-05-10 23:55:31.925 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7233/api/v1/vehicles/2/maintenance application/json 98 - 201 - application/json;+charset=utf-8 3972.4270ms
+2023-05-12 00:58:36.835 +03:00 [INF] Now listening on: https://localhost:7233
+2023-05-12 00:58:36.859 +03:00 [INF] Now listening on: http://localhost:5105
+2023-05-12 00:58:36.864 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-12 00:58:36.865 +03:00 [INF] Hosting environment: Development
+2023-05-12 00:58:36.866 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Maintenance API\
+2023-05-12 00:58:38.078 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/index.html - -
+2023-05-12 00:58:38.590 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/index.html - - - 200 - text/html;charset=utf-8 514.9612ms
+2023-05-12 00:58:38.829 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/_vs/browserLink - -
+2023-05-12 00:58:38.878 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 49.2012ms
+2023-05-12 00:58:39.378 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - -
+2023-05-12 00:58:39.593 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 214.4138ms

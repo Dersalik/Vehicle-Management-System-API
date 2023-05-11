@@ -6,6 +6,7 @@ using Serilog.Exceptions;
 using Vehicle_API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Vehicle_API.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,8 +30,10 @@ builder.Services.AddApiVersioning(options => {
     options.ApiVersionReader = new UrlSegmentApiVersionReader();
     options.ReportApiVersions = true;
 });
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<HttpResponseExceptionFilter>();
+});// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

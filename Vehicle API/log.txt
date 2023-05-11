@@ -424,3 +424,111 @@ WHERE [v].[Id] = @__vehicleid_0
 2023-05-10 23:55:30.912 +03:00 [INF] Executed action Vehicle_API.Controllers.vehiclesController.Get (Vehicle API) in 1809.9368ms
 2023-05-10 23:55:30.915 +03:00 [INF] Executed endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
 2023-05-10 23:55:30.929 +03:00 [INF] Request finished HTTP/1.0 GET https://localhost:7266/api/v1.0/vehicles/2 - - - 200 - application/json;+charset=utf-8 1875.5465ms
+2023-05-12 00:58:36.835 +03:00 [INF] Now listening on: https://localhost:7266
+2023-05-12 00:58:36.859 +03:00 [INF] Now listening on: http://localhost:5170
+2023-05-12 00:58:36.864 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-12 00:58:36.865 +03:00 [INF] Hosting environment: Development
+2023-05-12 00:58:36.866 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Vehicle API\
+2023-05-12 00:58:38.078 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+2023-05-12 00:58:38.593 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 517.4287ms
+2023-05-12 00:58:38.815 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+2023-05-12 00:58:38.912 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 96.7108ms
+2023-05-12 00:58:39.248 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+2023-05-12 00:58:39.489 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 241.0056ms
+2023-05-12 01:02:41.206 +03:00 [INF] Now listening on: https://localhost:7266
+2023-05-12 01:02:41.235 +03:00 [INF] Now listening on: http://localhost:5170
+2023-05-12 01:02:41.240 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-12 01:02:41.241 +03:00 [INF] Hosting environment: Development
+2023-05-12 01:02:41.242 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Vehicle API\
+2023-05-12 01:02:42.220 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+2023-05-12 01:02:42.635 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 417.1833ms
+2023-05-12 01:02:42.730 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+2023-05-12 01:02:42.754 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.2680ms
+2023-05-12 01:02:43.167 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+2023-05-12 01:02:43.346 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 178.9031ms
+2023-05-12 01:02:50.089 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/api/v1/vehicles - -
+2023-05-12 01:02:50.101 +03:00 [INF] Executing endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
+2023-05-12 01:02:50.125 +03:00 [INF] Route matched with {action = "Get", controller = "vehicles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller Vehicle_API.Controllers.vehiclesController (Vehicle API).
+2023-05-12 01:02:53.172 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Make], [v].[Model], [v].[VIN], [v].[year]
+FROM [Vehicles] AS [v]
+2023-05-12 01:02:53.280 +03:00 [INF] Retrieved 1 vehicles
+2023-05-12 01:02:53.294 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Vehicle_API.Model.Vehicle, Vehicle API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-05-12 01:02:53.316 +03:00 [INF] Executed action Vehicle_API.Controllers.vehiclesController.Get (Vehicle API) in 3184.5173ms
+2023-05-12 01:02:53.318 +03:00 [INF] Executed endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
+2023-05-12 01:02:53.332 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/api/v1/vehicles - - - 200 - application/json;+charset=utf-8 3243.4867ms
+2023-05-12 01:03:39.248 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7266/api/v1/vehicles application/json 83
+2023-05-12 01:03:39.253 +03:00 [INF] Executing endpoint 'Vehicle_API.Controllers.vehiclesController.Post (Vehicle API)'
+2023-05-12 01:03:39.266 +03:00 [INF] Route matched with {action = "Post", controller = "vehicles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Post(Vehicle_API.DTO.VehicleDTO) on controller Vehicle_API.Controllers.vehiclesController (Vehicle API).
+2023-05-12 01:03:39.574 +03:00 [INF] Executed DbCommand (43ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vehicles] ([Make], [Model], [VIN], [year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2023-05-12 01:03:39.617 +03:00 [INF] Added vehicle with id 3
+2023-05-12 01:03:39.619 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'Vehicle_API.Model.Vehicle'.
+2023-05-12 01:03:39.649 +03:00 [INF] Executed action Vehicle_API.Controllers.vehiclesController.Post (Vehicle API) in 380.3936ms
+2023-05-12 01:03:39.652 +03:00 [INF] Executed endpoint 'Vehicle_API.Controllers.vehiclesController.Post (Vehicle API)'
+2023-05-12 01:03:39.653 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7266/api/v1/vehicles application/json 83 - 201 - application/json;+charset=utf-8 404.4424ms
+2023-05-12 01:03:59.575 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7266/api/v1/vehicles application/json 86
+2023-05-12 01:03:59.576 +03:00 [INF] Executing endpoint 'Vehicle_API.Controllers.vehiclesController.Post (Vehicle API)'
+2023-05-12 01:03:59.577 +03:00 [INF] Route matched with {action = "Post", controller = "vehicles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Post(Vehicle_API.DTO.VehicleDTO) on controller Vehicle_API.Controllers.vehiclesController (Vehicle API).
+2023-05-12 01:03:59.593 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vehicles] ([Make], [Model], [VIN], [year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2023-05-12 01:03:59.595 +03:00 [INF] Added vehicle with id 4
+2023-05-12 01:03:59.596 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'Vehicle_API.Model.Vehicle'.
+2023-05-12 01:03:59.597 +03:00 [INF] Executed action Vehicle_API.Controllers.vehiclesController.Post (Vehicle API) in 18.597ms
+2023-05-12 01:03:59.599 +03:00 [INF] Executed endpoint 'Vehicle_API.Controllers.vehiclesController.Post (Vehicle API)'
+2023-05-12 01:03:59.600 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7266/api/v1/vehicles application/json 86 - 201 - application/json;+charset=utf-8 24.9820ms
+2023-05-12 01:04:14.677 +03:00 [INF] Request starting HTTP/2 POST https://localhost:7266/api/v1/vehicles application/json 81
+2023-05-12 01:04:14.681 +03:00 [INF] Executing endpoint 'Vehicle_API.Controllers.vehiclesController.Post (Vehicle API)'
+2023-05-12 01:04:14.682 +03:00 [INF] Route matched with {action = "Post", controller = "vehicles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Post(Vehicle_API.DTO.VehicleDTO) on controller Vehicle_API.Controllers.vehiclesController (Vehicle API).
+2023-05-12 01:04:14.686 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vehicles] ([Make], [Model], [VIN], [year])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2023-05-12 01:04:14.689 +03:00 [INF] Added vehicle with id 5
+2023-05-12 01:04:14.690 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'Vehicle_API.Model.Vehicle'.
+2023-05-12 01:04:14.691 +03:00 [INF] Executed action Vehicle_API.Controllers.vehiclesController.Post (Vehicle API) in 6.7008ms
+2023-05-12 01:04:14.692 +03:00 [INF] Executed endpoint 'Vehicle_API.Controllers.vehiclesController.Post (Vehicle API)'
+2023-05-12 01:04:14.693 +03:00 [INF] Request finished HTTP/2 POST https://localhost:7266/api/v1/vehicles application/json 81 - 201 - application/json;+charset=utf-8 16.4677ms
+2023-05-12 01:04:21.084 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/api/v1/vehicles/2 - -
+2023-05-12 01:04:21.085 +03:00 [INF] Executing endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
+2023-05-12 01:04:21.088 +03:00 [INF] Route matched with {action = "Get", controller = "vehicles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(Int32) on controller Vehicle_API.Controllers.vehiclesController (Vehicle API).
+2023-05-12 01:04:21.272 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__vehicleid_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Make], [v].[Model], [v].[VIN], [v].[year]
+FROM [Vehicles] AS [v]
+WHERE [v].[Id] = @__vehicleid_0
+2023-05-12 01:04:21.277 +03:00 [INF] Executing OkObjectResult, writing value of type 'Vehicle_API.Model.Vehicle'.
+2023-05-12 01:04:21.278 +03:00 [INF] Executed action Vehicle_API.Controllers.vehiclesController.Get (Vehicle API) in 186.8842ms
+2023-05-12 01:04:21.279 +03:00 [INF] Executed endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
+2023-05-12 01:04:21.281 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/api/v1/vehicles/2 - - - 200 - application/json;+charset=utf-8 196.8785ms
+2023-05-12 01:04:25.960 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/api/v1/vehicles/3 - -
+2023-05-12 01:04:25.961 +03:00 [INF] Executing endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
+2023-05-12 01:04:25.962 +03:00 [INF] Route matched with {action = "Get", controller = "vehicles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(Int32) on controller Vehicle_API.Controllers.vehiclesController (Vehicle API).
+2023-05-12 01:04:25.967 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__vehicleid_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Make], [v].[Model], [v].[VIN], [v].[year]
+FROM [Vehicles] AS [v]
+WHERE [v].[Id] = @__vehicleid_0
+2023-05-12 01:04:25.970 +03:00 [INF] Executing OkObjectResult, writing value of type 'Vehicle_API.Model.Vehicle'.
+2023-05-12 01:04:25.971 +03:00 [INF] Executed action Vehicle_API.Controllers.vehiclesController.Get (Vehicle API) in 7.3635ms
+2023-05-12 01:04:25.972 +03:00 [INF] Executed endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
+2023-05-12 01:04:25.973 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/api/v1/vehicles/3 - - - 200 - application/json;+charset=utf-8 13.3191ms
+2023-05-12 01:04:30.338 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7266/api/v1/vehicles/4 - -
+2023-05-12 01:04:30.340 +03:00 [INF] Executing endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
+2023-05-12 01:04:30.341 +03:00 [INF] Route matched with {action = "Get", controller = "vehicles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(Int32) on controller Vehicle_API.Controllers.vehiclesController (Vehicle API).
+2023-05-12 01:04:30.345 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__vehicleid_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Make], [v].[Model], [v].[VIN], [v].[year]
+FROM [Vehicles] AS [v]
+WHERE [v].[Id] = @__vehicleid_0
+2023-05-12 01:04:30.350 +03:00 [INF] Executing OkObjectResult, writing value of type 'Vehicle_API.Model.Vehicle'.
+2023-05-12 01:04:30.352 +03:00 [INF] Executed action Vehicle_API.Controllers.vehiclesController.Get (Vehicle API) in 7.737ms
+2023-05-12 01:04:30.354 +03:00 [INF] Executed endpoint 'Vehicle_API.Controllers.vehiclesController.Get (Vehicle API)'
+2023-05-12 01:04:30.355 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7266/api/v1/vehicles/4 - - - 200 - application/json;+charset=utf-8 16.3745ms
