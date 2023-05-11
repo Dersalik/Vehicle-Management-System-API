@@ -46,7 +46,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
 
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Vehicles.API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Vehicle.API", Version = "v1" });
 
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
@@ -65,7 +65,7 @@ app.UseApiVersioning();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(C => C.SwaggerEndpoint("/swagger/v1/swagger.json", "vehicles.API v1"));
+    app.UseSwaggerUI(C => C.SwaggerEndpoint("/swagger/v1/swagger.json", "vehicle.API v1"));
 }
 
 app.UseHttpsRedirection();
@@ -74,4 +74,23 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+await using var scope = app.Services.CreateAsyncScope();
+using var db = scope.ServiceProvider.GetService<VehicleDbContext>();
+await EnsureDb(app.Services, app.Logger);
+
 app.Run();
+
+async Task EnsureDb(IServiceProvider services, Microsoft.Extensions.Logging.ILogger logger)
+{
+using var db = services.CreateScope().ServiceProvider.GetRequiredService<VehicleDbContext>();
+if (db.Database.IsRelational())
+{
+logger.LogInformation("Ensuring database exists and is up to date at connection string '{connectionString}'", connectionString);
+//await db.Database.EnsureCreatedAsync();
+await db.Database.MigrateAsync();
+}
+}
+
+
+// Make the implicit Program class public so test projects can access it
+public partial class Program { }
