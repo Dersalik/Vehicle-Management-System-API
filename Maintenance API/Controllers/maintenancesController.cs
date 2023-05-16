@@ -38,13 +38,20 @@ namespace Maintenance_API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAll(int vehicleid)
         {
+            var result = await vehicleApiService.GetVehicleById(vehicleid);
+
+            if (result == null)
+            {
+                Logger.LogInformation($"Vehicle with id {vehicleid} not found");
+                return NotFound($"Vehicle with id {vehicleid} was not found");
+            }
 
             var maintenancerecords = await Repository.Where(d=>d.VehicleId==vehicleid);
 
             if(maintenancerecords == null)
             {
-                Logger.LogInformation($"Vehicle with id {vehicleid} not found");
-                return NotFound($"Vehicle with id {vehicleid} was not found");
+                Logger.LogInformation($"maintenance records for vehicle with id: {vehicleid} not found");
+                return NotFound($"maintenance records for vehicle with id: {vehicleid} not found");
             }   
 
             Logger.LogInformation($"Retrieved {maintenancerecords.Count()} vehicles");
@@ -61,12 +68,18 @@ namespace Maintenance_API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Get(int vehicleid, int maintenanceid)
         {
+            var result = await vehicleApiService.GetVehicleById(vehicleid);
 
+            if (result == null)
+            {
+                Logger.LogInformation($"Vehicle with id {vehicleid} not found");
+                return NotFound($"Vehicle with id {vehicleid} was not found");
+            }
 
             var maintenanceRecord = await Repository.GetFirstOrDefault(v => v.Id == maintenanceid && v.VehicleId== vehicleid);
             if (maintenanceRecord == null)
             {
-                Logger.LogInformation($"Vehicle with id {maintenanceid} not found");
+                Logger.LogInformation($"maintenance with id {maintenanceid} for car with id {vehicleid} not found");
                 return NotFound();
             }
             return Ok(maintenanceRecord);
@@ -116,8 +129,18 @@ namespace Maintenance_API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> Put(int maintenanceid, [FromBody] MaintenanceRecordDTO maintenanceRecordDTO)
+        public async Task<IActionResult> Put(int vehicleid,int maintenanceid, [FromBody] MaintenanceRecordDTO maintenanceRecordDTO)
         {
+            var result = await vehicleApiService.GetVehicleById(vehicleid);
+
+            if (result == null)
+            {
+                Logger.LogInformation($"Vehicle with id {vehicleid} not found");
+                return NotFound($"Vehicle with id {vehicleid} was not found");
+            }
+
+
+
             if (!ModelState.IsValid)
             {
                 Logger.LogInformation($"Invalid vehicle data");
@@ -147,8 +170,17 @@ namespace Maintenance_API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Delete(int maintenanceid)
+        public async Task<IActionResult> Delete(int vehicleid, int maintenanceid)
         {
+            var result = await vehicleApiService.GetVehicleById(vehicleid);
+
+            if (result == null)
+            {
+                Logger.LogInformation($"Vehicle with id {vehicleid} not found");
+                return NotFound($"Vehicle with id {vehicleid} was not found");
+            }
+
+
             if (!await Repository.CheckRecordExists(maintenanceid))
             {
                 Logger.LogInformation($"Vehicle with id {maintenanceid} not found");
