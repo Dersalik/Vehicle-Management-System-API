@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Vehicle_API.Data;
 using AutoMapper;
 using Vehicle_API.DTO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Vehicle_API.Controllers
 {
@@ -13,6 +14,7 @@ namespace Vehicle_API.Controllers
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("1.0")]
     [ApiController]
+    [Authorize]
     public class vehiclesController : ControllerBase
     {
         IRepository Repository { get; set; } 

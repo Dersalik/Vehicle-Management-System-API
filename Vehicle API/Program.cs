@@ -10,6 +10,14 @@ using Vehicle_API.Filters;
 using System.Reflection;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Identity.Web;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.IdentityModel.Tokens.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,6 +66,18 @@ builder.Services.AddDbContext<VehicleDbContext>(options => options.UseSqlServer(
 
 builder.Services.AddScoped<IRepository, Repository>();
 
+
+
+JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                    .AddMicrosoftIdentityWebApi(options =>
+                    {
+                        builder.Configuration.Bind("AzureAdB2C", options);
+                    },
+            options => { builder.Configuration.Bind("AzureAdB2C", options); });
+
+
+
 var app = builder.Build();
 app.UseApiVersioning();
 
@@ -70,8 +90,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
 await using var scope = app.Services.CreateAsyncScope();

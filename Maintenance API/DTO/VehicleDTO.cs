@@ -12,5 +12,6 @@ namespace Maintenance_API.DTO
         public int year { get; set; }
         [Required]
         public string VIN { get; set; }
+        public int? StatusCode { get; set; }
     }
 }

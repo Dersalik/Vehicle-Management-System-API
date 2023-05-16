@@ -40,6 +40,8 @@ namespace Maintenance_API.Controllers
         {
             var result = await vehicleApiService.GetVehicleById(vehicleid);
 
+
+
             if (result == null)
             {
                 Logger.LogInformation($"Vehicle with id {vehicleid} not found");
@@ -69,6 +71,8 @@ namespace Maintenance_API.Controllers
         public async Task<IActionResult> Get(int vehicleid, int maintenanceid)
         {
             var result = await vehicleApiService.GetVehicleById(vehicleid);
+
+
 
             if (result == null)
             {

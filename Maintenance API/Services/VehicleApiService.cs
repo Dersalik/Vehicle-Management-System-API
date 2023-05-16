@@ -29,7 +29,7 @@ namespace Maintenance_API.Services
 
                 var content = await response.Content.ReadAsStringAsync();
                 var vehicle = JsonConvert.DeserializeObject<VehicleDTO>(content);
-
+                vehicle.StatusCode= (int)response.StatusCode;
                 _logger.LogInformation($"Retrieved vehicle with id {id}");
                 return vehicle;
             }

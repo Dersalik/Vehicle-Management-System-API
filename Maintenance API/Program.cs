@@ -2,14 +2,17 @@ using Maintenance_API.Data;
 using Maintenance_API.Filters;
 using Maintenance_API.Helpers;
 using Maintenance_API.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Web;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using Serilog.Enrichers.Span;
 using Serilog.Exceptions;
+using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -73,6 +76,14 @@ builder.Services.AddHttpClient("VehicleAPI", config =>
 }); 
 builder.Services.AddScoped<IVehicleApiService, VehicleApiService>();
 
+
+JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                    .AddMicrosoftIdentityWebApi(options =>
+                    {
+                        builder.Configuration.Bind("AzureAdB2C", options);
+                    },
+            options => { builder.Configuration.Bind("AzureAdB2C", options); });
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -84,8 +95,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
 await using var scope = app.Services.CreateAsyncScope();

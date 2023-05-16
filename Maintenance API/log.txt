@@ -1000,3 +1000,300 @@ WHERE [v].[VehicleId] = @__vehicleid_0
 2023-05-16 21:50:22.235 +03:00 [INF] Executed action Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API) in 96.0382ms
 2023-05-16 21:50:22.237 +03:00 [INF] Executed endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
 2023-05-16 21:50:22.238 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/api/v1/vehicles/225/maintenance - - - 404 - text/plain;+charset=utf-8 110.5902ms
+2023-05-16 22:51:58.270 +03:00 [INF] Ensuring database exists and is up to date at connection string 'Server=(localdb)\MSSQLLocalDB;Database=Maintenancedb;Trusted_Connection=True'
+2023-05-16 22:51:59.955 +03:00 [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-16 22:52:00.083 +03:00 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-05-16 22:52:00.094 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-16 22:52:00.111 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-05-16 22:52:00.167 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-05-16 22:52:00.220 +03:00 [INF] No migrations were applied. The database is already up to date.
+2023-05-16 22:52:00.402 +03:00 [INF] Now listening on: https://localhost:7233
+2023-05-16 22:52:00.407 +03:00 [INF] Now listening on: http://localhost:5105
+2023-05-16 22:52:00.409 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-16 22:52:00.410 +03:00 [INF] Hosting environment: Development
+2023-05-16 22:52:00.411 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Maintenance API\
+2023-05-16 22:52:01.141 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/index.html - -
+2023-05-16 22:52:01.585 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/index.html - - - 200 - text/html;charset=utf-8 446.6844ms
+2023-05-16 22:52:01.681 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/_vs/browserLink - -
+2023-05-16 22:52:01.697 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.6151ms
+2023-05-16 22:52:02.165 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - -
+2023-05-16 22:52:02.423 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 258.3141ms
+2023-05-16 22:54:06.737 +03:00 [INF] Ensuring database exists and is up to date at connection string 'Server=(localdb)\MSSQLLocalDB;Database=Maintenancedb;Trusted_Connection=True'
+2023-05-16 22:54:07.460 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-16 22:54:07.563 +03:00 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-05-16 22:54:07.577 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-16 22:54:07.587 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-05-16 22:54:07.660 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-05-16 22:54:07.699 +03:00 [INF] No migrations were applied. The database is already up to date.
+2023-05-16 22:54:07.870 +03:00 [INF] Now listening on: https://localhost:7233
+2023-05-16 22:54:07.872 +03:00 [INF] Now listening on: http://localhost:5105
+2023-05-16 22:54:07.873 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-16 22:54:07.873 +03:00 [INF] Hosting environment: Development
+2023-05-16 22:54:07.874 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Maintenance API\
+2023-05-16 22:54:08.703 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/index.html - -
+2023-05-16 22:54:09.185 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/index.html - - - 200 - text/html;charset=utf-8 484.6884ms
+2023-05-16 22:54:09.283 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/_vs/browserLink - -
+2023-05-16 22:54:09.306 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 23.4072ms
+2023-05-16 22:54:09.690 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - -
+2023-05-16 22:54:09.897 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 206.9878ms
+2023-05-16 22:56:54.885 +03:00 [INF] Ensuring database exists and is up to date at connection string 'Server=(localdb)\MSSQLLocalDB;Database=Maintenancedb;Trusted_Connection=True'
+2023-05-16 22:56:55.557 +03:00 [INF] Executed DbCommand (83ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-16 22:56:55.714 +03:00 [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-05-16 22:56:55.729 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-16 22:56:55.743 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-05-16 22:56:55.799 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-05-16 22:56:55.842 +03:00 [INF] No migrations were applied. The database is already up to date.
+2023-05-16 22:56:56.012 +03:00 [INF] Now listening on: https://localhost:7233
+2023-05-16 22:56:56.013 +03:00 [INF] Now listening on: http://localhost:5105
+2023-05-16 22:56:56.014 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-16 22:56:56.015 +03:00 [INF] Hosting environment: Development
+2023-05-16 22:56:56.016 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Maintenance API\
+2023-05-16 22:56:56.786 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/index.html - -
+2023-05-16 22:56:57.244 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/index.html - - - 200 - text/html;charset=utf-8 461.0580ms
+2023-05-16 22:56:57.431 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/_vs/browserLink - -
+2023-05-16 22:56:57.447 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.3654ms
+2023-05-16 22:56:57.734 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - -
+2023-05-16 22:56:57.951 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 216.3787ms
+2023-05-17 00:28:31.673 +03:00 [INF] Ensuring database exists and is up to date at connection string 'Server=(localdb)\MSSQLLocalDB;Database=Maintenancedb;Trusted_Connection=True'
+2023-05-17 00:28:34.371 +03:00 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-17 00:28:34.466 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-05-17 00:28:34.475 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-17 00:28:34.478 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-05-17 00:28:34.545 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-05-17 00:28:34.588 +03:00 [INF] No migrations were applied. The database is already up to date.
+2023-05-17 00:28:34.869 +03:00 [INF] Now listening on: https://localhost:7233
+2023-05-17 00:28:34.870 +03:00 [INF] Now listening on: http://localhost:5105
+2023-05-17 00:28:34.871 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-17 00:28:34.872 +03:00 [INF] Hosting environment: Development
+2023-05-17 00:28:34.873 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Maintenance API\
+2023-05-17 00:28:36.198 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/index.html - -
+2023-05-17 00:28:36.650 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/index.html - - - 200 - text/html;charset=utf-8 455.4146ms
+2023-05-17 00:28:37.069 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/_vs/browserLink - -
+2023-05-17 00:28:37.102 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.8340ms
+2023-05-17 00:28:37.344 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - -
+2023-05-17 00:28:37.540 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 195.0762ms
+2023-05-17 00:28:51.476 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/api/v1/vehicles/2/maintenance - -
+2023-05-17 00:28:51.489 +03:00 [INF] Executing endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:28:51.525 +03:00 [INF] Route matched with {action = "GetAll", controller = "maintenances"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32) on controller Maintenance_API.Controllers.maintenancesController (Maintenance API).
+2023-05-17 00:28:51.679 +03:00 [INF] Start processing HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-17 00:28:51.682 +03:00 [INF] Sending HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-17 00:28:51.946 +03:00 [INF] Received HTTP response headers after 259.5861ms - 401
+2023-05-17 00:28:51.949 +03:00 [INF] End processing HTTP request after 274.2244ms - 401
+2023-05-17 00:28:51.952 +03:00 [ERR] Failed to retrieve vehicle with id 2. Status code: Unauthorized
+2023-05-17 00:28:51.953 +03:00 [INF] Vehicle with id 2 not found
+2023-05-17 00:28:51.963 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-05-17 00:28:51.974 +03:00 [INF] Executed action Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API) in 442.0166ms
+2023-05-17 00:28:51.975 +03:00 [INF] Executed endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:28:51.981 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/api/v1/vehicles/2/maintenance - - - 404 - text/plain;+charset=utf-8 505.4953ms
+2023-05-17 00:29:08.826 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/api/v1/vehicles/3/maintenance - -
+2023-05-17 00:29:08.828 +03:00 [INF] Executing endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:29:08.829 +03:00 [INF] Route matched with {action = "GetAll", controller = "maintenances"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32) on controller Maintenance_API.Controllers.maintenancesController (Maintenance API).
+2023-05-17 00:29:08.873 +03:00 [INF] Start processing HTTP request GET "https://localhost:7266/api/v1.0/vehicles/3"
+2023-05-17 00:29:08.875 +03:00 [INF] Sending HTTP request GET "https://localhost:7266/api/v1.0/vehicles/3"
+2023-05-17 00:29:08.891 +03:00 [INF] Received HTTP response headers after 15.4287ms - 401
+2023-05-17 00:29:08.892 +03:00 [INF] End processing HTTP request after 18.7335ms - 401
+2023-05-17 00:29:08.893 +03:00 [ERR] Failed to retrieve vehicle with id 3. Status code: Unauthorized
+2023-05-17 00:29:08.894 +03:00 [INF] Vehicle with id 3 not found
+2023-05-17 00:29:08.895 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-05-17 00:29:08.896 +03:00 [INF] Executed action Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API) in 65.5131ms
+2023-05-17 00:29:08.898 +03:00 [INF] Executed endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:29:08.899 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/api/v1/vehicles/3/maintenance - - - 404 - text/plain;+charset=utf-8 73.0654ms
+2023-05-17 00:29:45.725 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/api/v1/vehicles/3/maintenance/1 - -
+2023-05-17 00:29:45.730 +03:00 [INF] Executing endpoint 'Maintenance_API.Controllers.maintenancesController.Get (Maintenance API)'
+2023-05-17 00:29:45.733 +03:00 [INF] Route matched with {action = "Get", controller = "maintenances"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get(Int32, Int32) on controller Maintenance_API.Controllers.maintenancesController (Maintenance API).
+2023-05-17 00:29:45.738 +03:00 [INF] Start processing HTTP request GET "https://localhost:7266/api/v1.0/vehicles/3"
+2023-05-17 00:29:45.739 +03:00 [INF] Sending HTTP request GET "https://localhost:7266/api/v1.0/vehicles/3"
+2023-05-17 00:29:45.754 +03:00 [INF] Received HTTP response headers after 14.4164ms - 401
+2023-05-17 00:29:45.755 +03:00 [INF] End processing HTTP request after 17.3574ms - 401
+2023-05-17 00:29:45.756 +03:00 [ERR] Failed to retrieve vehicle with id 3. Status code: Unauthorized
+2023-05-17 00:29:45.757 +03:00 [INF] Vehicle with id 3 not found
+2023-05-17 00:29:45.757 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-05-17 00:29:45.758 +03:00 [INF] Executed action Maintenance_API.Controllers.maintenancesController.Get (Maintenance API) in 24.1469ms
+2023-05-17 00:29:45.759 +03:00 [INF] Executed endpoint 'Maintenance_API.Controllers.maintenancesController.Get (Maintenance API)'
+2023-05-17 00:29:45.761 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/api/v1/vehicles/3/maintenance/1 - - - 404 - text/plain;+charset=utf-8 35.6012ms
+2023-05-17 00:36:08.227 +03:00 [INF] Ensuring database exists and is up to date at connection string 'Server=(localdb)\MSSQLLocalDB;Database=Maintenancedb;Trusted_Connection=True'
+2023-05-17 00:36:08.865 +03:00 [INF] Executed DbCommand (80ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-17 00:36:08.972 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-05-17 00:36:08.979 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-17 00:36:08.982 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-05-17 00:36:09.035 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-05-17 00:36:09.444 +03:00 [INF] No migrations were applied. The database is already up to date.
+2023-05-17 00:36:09.489 +03:00 [INF] User profile is available. Using 'C:\Users\max\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-17 00:36:09.818 +03:00 [INF] Now listening on: https://localhost:7233
+2023-05-17 00:36:09.819 +03:00 [INF] Now listening on: http://localhost:5105
+2023-05-17 00:36:09.820 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-17 00:36:09.821 +03:00 [INF] Hosting environment: Development
+2023-05-17 00:36:09.822 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Maintenance API\
+2023-05-17 00:36:11.248 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/index.html - -
+2023-05-17 00:36:11.838 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/index.html - - - 200 - text/html;charset=utf-8 594.3320ms
+2023-05-17 00:36:12.137 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/_vs/browserLink - -
+2023-05-17 00:36:12.171 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 34.1990ms
+2023-05-17 00:36:12.402 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - -
+2023-05-17 00:36:12.587 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 184.8106ms
+2023-05-17 00:36:57.714 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/api/v1/vehicles/3/maintenance - -
+2023-05-17 00:36:57.733 +03:00 [INF] Executing endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:36:57.768 +03:00 [INF] Route matched with {action = "GetAll", controller = "maintenances"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32) on controller Maintenance_API.Controllers.maintenancesController (Maintenance API).
+2023-05-17 00:36:57.933 +03:00 [INF] Start processing HTTP request GET "https://localhost:7266/api/v1.0/vehicles/3"
+2023-05-17 00:36:57.937 +03:00 [INF] Sending HTTP request GET "https://localhost:7266/api/v1.0/vehicles/3"
+2023-05-17 00:36:58.198 +03:00 [INF] Received HTTP response headers after 257.2087ms - 401
+2023-05-17 00:36:58.201 +03:00 [INF] End processing HTTP request after 273.1854ms - 401
+2023-05-17 00:36:58.205 +03:00 [ERR] Failed to retrieve vehicle with id 3. Status code: Unauthorized
+2023-05-17 00:36:58.206 +03:00 [INF] Vehicle with id 3 not found
+2023-05-17 00:36:58.216 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-05-17 00:36:58.226 +03:00 [INF] Executed action Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API) in 452.1909ms
+2023-05-17 00:36:58.228 +03:00 [INF] Executed endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:36:58.234 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/api/v1/vehicles/3/maintenance - - - 404 - text/plain;+charset=utf-8 520.4672ms
+2023-05-17 00:37:03.736 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/api/v1/vehicles/2/maintenance - -
+2023-05-17 00:37:03.737 +03:00 [INF] Executing endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:37:03.738 +03:00 [INF] Route matched with {action = "GetAll", controller = "maintenances"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32) on controller Maintenance_API.Controllers.maintenancesController (Maintenance API).
+2023-05-17 00:37:03.780 +03:00 [INF] Start processing HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-17 00:37:03.782 +03:00 [INF] Sending HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-17 00:37:03.800 +03:00 [INF] Received HTTP response headers after 16.946ms - 401
+2023-05-17 00:37:03.801 +03:00 [INF] End processing HTTP request after 21.0604ms - 401
+2023-05-17 00:37:03.803 +03:00 [ERR] Failed to retrieve vehicle with id 2. Status code: Unauthorized
+2023-05-17 00:37:03.803 +03:00 [INF] Vehicle with id 2 not found
+2023-05-17 00:37:03.804 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-05-17 00:37:03.805 +03:00 [INF] Executed action Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API) in 65.3245ms
+2023-05-17 00:37:03.807 +03:00 [INF] Executed endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:37:03.808 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/api/v1/vehicles/2/maintenance - - - 404 - text/plain;+charset=utf-8 72.1560ms
+2023-05-17 00:37:05.442 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/api/v1/vehicles/2/maintenance - -
+2023-05-17 00:37:05.443 +03:00 [INF] Executing endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:37:05.443 +03:00 [INF] Route matched with {action = "GetAll", controller = "maintenances"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32) on controller Maintenance_API.Controllers.maintenancesController (Maintenance API).
+2023-05-17 00:37:05.448 +03:00 [INF] Start processing HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-17 00:37:05.449 +03:00 [INF] Sending HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-17 00:37:05.460 +03:00 [INF] Received HTTP response headers after 9.5801ms - 401
+2023-05-17 00:37:05.461 +03:00 [INF] End processing HTTP request after 12.7146ms - 401
+2023-05-17 00:37:05.462 +03:00 [ERR] Failed to retrieve vehicle with id 2. Status code: Unauthorized
+2023-05-17 00:37:05.463 +03:00 [INF] Vehicle with id 2 not found
+2023-05-17 00:37:05.463 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-05-17 00:37:05.465 +03:00 [INF] Executed action Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API) in 18.5629ms
+2023-05-17 00:37:05.466 +03:00 [INF] Executed endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:37:05.467 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/api/v1/vehicles/2/maintenance - - - 404 - text/plain;+charset=utf-8 25.7432ms
+2023-05-17 00:37:06.151 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/api/v1/vehicles/2/maintenance - -
+2023-05-17 00:37:06.153 +03:00 [INF] Executing endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:37:06.155 +03:00 [INF] Route matched with {action = "GetAll", controller = "maintenances"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32) on controller Maintenance_API.Controllers.maintenancesController (Maintenance API).
+2023-05-17 00:37:06.161 +03:00 [INF] Start processing HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-17 00:37:06.163 +03:00 [INF] Sending HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-17 00:37:06.174 +03:00 [INF] Received HTTP response headers after 8.96ms - 401
+2023-05-17 00:37:06.175 +03:00 [INF] End processing HTTP request after 13.9848ms - 401
+2023-05-17 00:37:06.176 +03:00 [ERR] Failed to retrieve vehicle with id 2. Status code: Unauthorized
+2023-05-17 00:37:06.177 +03:00 [INF] Vehicle with id 2 not found
+2023-05-17 00:37:06.177 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-05-17 00:37:06.179 +03:00 [INF] Executed action Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API) in 18.7157ms
+2023-05-17 00:37:06.180 +03:00 [INF] Executed endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:37:06.181 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/api/v1/vehicles/2/maintenance - - - 404 - text/plain;+charset=utf-8 30.3682ms
+2023-05-17 00:37:29.540 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/api/v1/vehicles/2/maintenance - -
+2023-05-17 00:37:29.551 +03:00 [INF] Executing endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:37:29.552 +03:00 [INF] Route matched with {action = "GetAll", controller = "maintenances"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32) on controller Maintenance_API.Controllers.maintenancesController (Maintenance API).
+2023-05-17 00:37:29.556 +03:00 [INF] Start processing HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-17 00:37:29.557 +03:00 [INF] Sending HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-17 00:37:29.585 +03:00 [INF] Received HTTP response headers after 26.928ms - 401
+2023-05-17 00:37:29.586 +03:00 [INF] End processing HTTP request after 30.8814ms - 401
+2023-05-17 00:37:29.588 +03:00 [ERR] Failed to retrieve vehicle with id 2. Status code: Unauthorized
+2023-05-17 00:40:00.604 +03:00 [INF] Ensuring database exists and is up to date at connection string 'Server=(localdb)\MSSQLLocalDB;Database=Maintenancedb;Trusted_Connection=True'
+2023-05-17 00:40:01.226 +03:00 [INF] Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-17 00:40:01.329 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-05-17 00:40:01.337 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-17 00:40:01.343 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-05-17 00:40:01.385 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-05-17 00:40:01.426 +03:00 [INF] No migrations were applied. The database is already up to date.
+2023-05-17 00:40:01.484 +03:00 [INF] User profile is available. Using 'C:\Users\max\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-17 00:40:01.738 +03:00 [INF] Now listening on: https://localhost:7233
+2023-05-17 00:40:01.739 +03:00 [INF] Now listening on: http://localhost:5105
+2023-05-17 00:40:01.740 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-17 00:40:01.741 +03:00 [INF] Hosting environment: Development
+2023-05-17 00:40:01.742 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Maintenance API\
+2023-05-17 00:40:02.655 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/index.html - -
+2023-05-17 00:40:03.111 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/index.html - - - 200 - text/html;charset=utf-8 460.1701ms
+2023-05-17 00:40:03.357 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/_vs/browserLink - -
+2023-05-17 00:40:03.382 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 25.0697ms
+2023-05-17 00:40:04.206 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - -
+2023-05-17 00:40:04.436 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 229.5264ms
+2023-05-17 00:40:21.438 +03:00 [INF] Ensuring database exists and is up to date at connection string 'Server=(localdb)\MSSQLLocalDB;Database=Maintenancedb;Trusted_Connection=True'
+2023-05-17 00:40:22.218 +03:00 [INF] Executed DbCommand (74ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-17 00:40:22.328 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-05-17 00:40:22.337 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-05-17 00:40:22.341 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-05-17 00:40:22.407 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-05-17 00:40:22.445 +03:00 [INF] No migrations were applied. The database is already up to date.
+2023-05-17 00:40:22.501 +03:00 [INF] User profile is available. Using 'C:\Users\max\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-05-17 00:40:22.873 +03:00 [INF] Now listening on: https://localhost:7233
+2023-05-17 00:40:22.881 +03:00 [INF] Now listening on: http://localhost:5105
+2023-05-17 00:40:22.882 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-17 00:40:22.883 +03:00 [INF] Hosting environment: Development
+2023-05-17 00:40:22.884 +03:00 [INF] Content root path: C:\Users\max\source\repos\Vehicle Management System API\Maintenance API\
+2023-05-17 00:40:24.331 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/index.html - -
+2023-05-17 00:40:24.827 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/index.html - - - 200 - text/html;charset=utf-8 499.4545ms
+2023-05-17 00:40:25.961 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/_vs/browserLink - -
+2023-05-17 00:40:25.984 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.0878ms
+2023-05-17 00:40:26.340 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - -
+2023-05-17 00:40:26.538 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 197.2994ms
+2023-05-17 00:40:45.106 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/api/v1/vehicles/2/maintenance - -
+2023-05-17 00:40:45.502 +03:00 [INF] Executing endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:40:45.534 +03:00 [INF] Route matched with {action = "GetAll", controller = "maintenances"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32) on controller Maintenance_API.Controllers.maintenancesController (Maintenance API).
+2023-05-17 00:40:45.677 +03:00 [INF] Start processing HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-17 00:40:45.681 +03:00 [INF] Sending HTTP request GET "https://localhost:7266/api/v1.0/vehicles/2"
+2023-05-17 00:40:45.927 +03:00 [INF] Received HTTP response headers after 241.4134ms - 401
+2023-05-17 00:40:45.929 +03:00 [INF] End processing HTTP request after 257.4856ms - 401
+2023-05-17 00:40:45.934 +03:00 [ERR] Failed to retrieve vehicle with id 2. Status code: Unauthorized
+2023-05-17 00:40:56.311 +03:00 [INF] Vehicle with id 2 not found
+2023-05-17 00:40:59.350 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2023-05-17 00:40:59.361 +03:00 [INF] Executed action Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API) in 13819.4309ms
+2023-05-17 00:40:59.363 +03:00 [INF] Executed endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:40:59.371 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7233/api/v1/vehicles/2/maintenance - - - 404 - text/plain;+charset=utf-8 14265.0627ms
+2023-05-17 00:41:07.099 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7233/api/v1/vehicles/3/maintenance - -
+2023-05-17 00:41:07.100 +03:00 [INF] Executing endpoint 'Maintenance_API.Controllers.maintenancesController.GetAll (Maintenance API)'
+2023-05-17 00:41:07.102 +03:00 [INF] Route matched with {action = "GetAll", controller = "maintenances"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32) on controller Maintenance_API.Controllers.maintenancesController (Maintenance API).
+2023-05-17 00:41:07.144 +03:00 [INF] Start processing HTTP request GET "https://localhost:7266/api/v1.0/vehicles/3"
+2023-05-17 00:41:07.146 +03:00 [INF] Sending HTTP request GET "https://localhost:7266/api/v1.0/vehicles/3"
+2023-05-17 00:41:07.170 +03:00 [INF] Received HTTP response headers after 22.9773ms - 401
+2023-05-17 00:41:07.171 +03:00 [INF] End processing HTTP request after 26.9726ms - 401
