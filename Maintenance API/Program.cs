@@ -3,10 +3,12 @@ using Maintenance_API.Filters;
 using Maintenance_API.Helpers;
 using Maintenance_API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Web;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -77,13 +79,9 @@ builder.Services.AddHttpClient("VehicleAPI", config =>
 builder.Services.AddScoped<IVehicleApiService, VehicleApiService>();
 
 
-JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                    .AddMicrosoftIdentityWebApi(options =>
-                    {
-                        builder.Configuration.Bind("AzureAdB2C", options);
-                    },
-            options => { builder.Configuration.Bind("AzureAdB2C", options); });
+//Configuring appsettings section AzureAdB2C, into IOptions
+builder.Services.AddOptions();
+builder.Services.Configure<OpenIdConnectOptions>(builder.Configuration.GetSection("AzureAdB2C"));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
