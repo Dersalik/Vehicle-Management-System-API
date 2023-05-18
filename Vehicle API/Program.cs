@@ -18,6 +18,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Identity.Web;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -66,15 +67,6 @@ builder.Services.AddDbContext<VehicleDbContext>(options => options.UseSqlServer(
 
 builder.Services.AddScoped<IRepository, Repository>();
 
-
-
-JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                    .AddMicrosoftIdentityWebApi(options =>
-                    {
-                        builder.Configuration.Bind("AzureAdB2C", options);
-                    },
-            options => { builder.Configuration.Bind("AzureAdB2C", options); });
 
 
 

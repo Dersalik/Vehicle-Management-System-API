@@ -5,6 +5,7 @@ using Maintenance_API.Model;
 using Maintenance_API.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Web.Resource;
 
 namespace Maintenance_API.Controllers
 {
@@ -15,6 +16,7 @@ namespace Maintenance_API.Controllers
     {
         IRepository Repository { get; set; }
         ILogger<maintenancesController> Logger;
+
         IVehicleApiService vehicleApiService { get; set; }
         private IMapper Mapper
         {
@@ -38,8 +40,8 @@ namespace Maintenance_API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAll(int vehicleid)
         {
-            var result = await vehicleApiService.GetVehicleById(vehicleid);
 
+            var result = await vehicleApiService.GetVehicleById(vehicleid);
 
 
             if (result == null)

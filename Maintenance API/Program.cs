@@ -16,6 +16,7 @@ using Serilog.Enrichers.Span;
 using Serilog.Exceptions;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
+using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Logging.ClearProviders();
@@ -75,13 +76,14 @@ builder.Services.AddHttpClient("VehicleAPI", config =>
     config.Timeout = new TimeSpan(0, 0, 30);
     config.DefaultRequestVersion= new Version(1, 0);
     config.DefaultRequestHeaders.Clear();
+   
 }); 
 builder.Services.AddScoped<IVehicleApiService, VehicleApiService>();
 
 
-//Configuring appsettings section AzureAdB2C, into IOptions
-builder.Services.AddOptions();
-builder.Services.Configure<OpenIdConnectOptions>(builder.Configuration.GetSection("AzureAdB2C"));
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
