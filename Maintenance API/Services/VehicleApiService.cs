@@ -28,26 +28,26 @@ namespace Maintenance_API.Services
         {
             try
             {
-                var v = await _downstreamWebApi.GetForUserAsync<VehicleDTO>("MembersApi",
+                var vehicle = await _downstreamWebApi.GetForUserAsync<VehicleDTO>("MembersApi",
                     options =>
                     {
                         options.RelativePath = $"/api/v1.0/vehicles/{id}";
 
                     });
 
-                var httpClient = _httpClientFactory.CreateClient("VehicleAPI");
-               
-                var response = await httpClient.GetAsync($"/api/v1.0/vehicles/{id}");
+                //var httpClient = _httpClientFactory.CreateClient("VehicleAPI");
 
-                if (!response.IsSuccessStatusCode)
+                //var response = await httpClient.GetAsync($"/api/v1.0/vehicles/{id}");
+
+                if (vehicle==null)
                 {
-                    _logger.LogError($"Failed to retrieve vehicle with id {id}. Status code: {response.StatusCode}");
+                    _logger.LogError($"Failed to retrieve vehicle with id {id}.");
                     return null;
                 }
 
-                var content = await response.Content.ReadAsStringAsync();
-                var vehicle = JsonConvert.DeserializeObject<VehicleDTO>(content);
-                vehicle!.StatusCode= (int)response.StatusCode;
+                //var content = await response.Content.ReadAsStringAsync();
+                //var vehicle = JsonConvert.DeserializeObject<VehicleDTO>(content);
+                //vehicle!.StatusCode= (int)response.StatusCode;
                 _logger.LogInformation($"Retrieved vehicle with id {id}");
                 return vehicle;
             }
