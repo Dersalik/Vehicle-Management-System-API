@@ -14,12 +14,13 @@ namespace Maintenance_API.Services
     {
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly ILogger<VehicleApiService> _logger;
+        private readonly IDownstreamApi _downstreamWebApi;
 
-        public VehicleApiService(IHttpClientFactory httpClientFactory, ILogger<VehicleApiService> logger)
+        public VehicleApiService(IHttpClientFactory httpClientFactory, ILogger<VehicleApiService> logger, IDownstreamApi downstreamWebApi)
         {
             _httpClientFactory = httpClientFactory;
             _logger = logger;
-
+            _downstreamWebApi = downstreamWebApi;
         }
 
 
@@ -27,7 +28,12 @@ namespace Maintenance_API.Services
         {
             try
             {
+                var v = await _downstreamWebApi.GetForUserAsync<VehicleDTO>("MembersApi",
+                    options =>
+                    {
+                        options.RelativePath = $"/api/v1.0/vehicles/{id}";
 
+                    });
 
                 var httpClient = _httpClientFactory.CreateClient("VehicleAPI");
                

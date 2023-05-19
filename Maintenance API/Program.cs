@@ -80,6 +80,11 @@ builder.Services.AddHttpClient("VehicleAPI", config =>
 }); 
 builder.Services.AddScoped<IVehicleApiService, VehicleApiService>();
 
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"))
+    .EnableTokenAcquisitionToCallDownstreamApi()
+    .AddInMemoryTokenCaches()
+    .AddDownstreamApi("MembersApi", builder.Configuration.GetSection("DownstreamApi"));
 
 
 

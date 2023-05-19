@@ -69,6 +69,7 @@ builder.Services.AddScoped<IRepository, Repository>();
 
 
 
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddMicrosoftIdentityWebApi(builder.Configuration);
 
 var app = builder.Build();
 app.UseApiVersioning();

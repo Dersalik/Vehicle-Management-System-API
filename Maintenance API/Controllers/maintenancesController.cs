@@ -3,6 +3,7 @@ using Maintenance_API.Data;
 using Maintenance_API.DTO;
 using Maintenance_API.Model;
 using Maintenance_API.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Web.Resource;
@@ -12,6 +13,7 @@ namespace Maintenance_API.Controllers
     [Route("api/v{version:apiVersion}/vehicles/{vehicleid}/maintenance")]
     [ApiVersion("1.0")]
     [ApiController]
+    [Authorize]
     public class maintenancesController : ControllerBase
     {
         IRepository Repository { get; set; }
