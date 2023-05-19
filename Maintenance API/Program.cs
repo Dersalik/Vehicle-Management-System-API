@@ -21,6 +21,8 @@ using Microsoft.AspNetCore.Authentication;
 var builder = WebApplication.CreateBuilder(args);
 builder.Logging.ClearProviders();
 
+builder.Services.AddApplicationInsightsTelemetry(builder.Configuration);
+
 builder.Host.UseSerilog((context, loggerConfig) => {
     loggerConfig
     .ReadFrom.Configuration(context.Configuration)
@@ -64,6 +66,8 @@ builder.Services.AddApiVersioning(options => {
 });
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
+
+
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<MaintenanceDbContext>(options => options.UseSqlServer(connectionString));

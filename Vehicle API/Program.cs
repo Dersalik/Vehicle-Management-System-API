@@ -24,6 +24,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Logging.ClearProviders();
 
+builder.Services.AddApplicationInsightsTelemetry(builder.Configuration);
+
+
+
 builder.Host.UseSerilog((context, loggerConfig) => {
     loggerConfig
     .ReadFrom.Configuration(context.Configuration)
