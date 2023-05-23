@@ -105,6 +105,11 @@ namespace Maintenance_API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Post(int vehicleid,[FromBody] MaintenanceRecordPostDTO maintenanceRecordDTO)
         {
+            if (!ModelState.IsValid)
+            {
+                Logger.LogInformation($"Invalid vehicle data");
+                return BadRequest(ModelState);
+            }
 
             var result =await vehicleApiService.GetVehicleById(vehicleid);
 
@@ -114,11 +119,7 @@ namespace Maintenance_API.Controllers
                 return NotFound($"Vehicle with id {vehicleid} was not found");
             }
 
-            if (!ModelState.IsValid)
-            {
-                Logger.LogInformation($"Invalid vehicle data");
-                return BadRequest(ModelState);
-            }
+
             var maintenanceRecord = Mapper.Map<MaintenanceRecord>(maintenanceRecordDTO);
             maintenanceRecord.VehicleId = vehicleid;
             await Repository.Add(maintenanceRecord);
@@ -139,6 +140,11 @@ namespace Maintenance_API.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Put(int vehicleid,int maintenanceid, [FromBody] MaintenanceRecordDTO maintenanceRecordDTO)
         {
+            if (!ModelState.IsValid)
+            {
+                Logger.LogInformation($"Invalid vehicle data");
+                return BadRequest(ModelState);
+            }
             var result = await vehicleApiService.GetVehicleById(vehicleid);
 
             if (result == null)
@@ -149,11 +155,7 @@ namespace Maintenance_API.Controllers
 
 
 
-            if (!ModelState.IsValid)
-            {
-                Logger.LogInformation($"Invalid vehicle data");
-                return BadRequest(ModelState);
-            }
+
 
             if (!await Repository.CheckRecordExists(maintenanceid))
             {

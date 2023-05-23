@@ -10,7 +10,7 @@ namespace Maintenance_API.Helpers
         {
              CreateMap<MaintenanceRecord, MaintenanceRecordDTO>().ReverseMap();
             CreateMap<MaintenanceRecord, MaintenanceRecordPostDTO>().ReverseMap();
-
+            
         }
     }
 }
