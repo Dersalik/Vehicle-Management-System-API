@@ -11,6 +11,7 @@ using Moq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -315,6 +316,71 @@ namespace MaintenanceAPITests;
         mockRepository.Verify(r => r.Save(), Times.Never);
         Assert.NotNull(result);
         Assert.Equal(StatusCodes.Status404NotFound, result.StatusCode);
+    }
+    [Fact]
+    public async Task Delete_ExistingVehicleAndRecord_ReturnsNoContent()
+    {
+        // Arrange
+        int vehicleId = 1;
+        int maintenanceId = 1;
+        var vehicle = new VehicleDTO ();
+        var maintenanceRecord = new MaintenanceRecord { Id = maintenanceId };
+
+        mockVehicleApiService.Setup(s => s.GetVehicleById(vehicleId))
+            .ReturnsAsync(vehicle);
+        mockRepository.Setup(r => r.CheckRecordExists(maintenanceId))
+            .ReturnsAsync(true);
+        mockRepository.Setup(r => r.GetFirstOrDefault(It.IsAny<Expression<Func<MaintenanceRecord, bool>>>()))
+            .ReturnsAsync(maintenanceRecord);
+
+        // Act
+        var result = await controller.Delete(vehicleId, maintenanceId);
+
+        // Assert
+        mockRepository.Verify(r => r.Remove(maintenanceRecord), Times.Once);
+        mockRepository.Verify(r => r.Save(), Times.Once);
+
+        Assert.IsType<NoContentResult>(result);
+    }
+
+    [Fact]
+    public async Task Delete_NonExistingVehicle_ReturnsNotFound()
+    {
+        // Arrange
+        int vehicleId = 1;
+        int maintenanceId = 1;
+
+        mockVehicleApiService.Setup(s => s.GetVehicleById(vehicleId))
+            .ReturnsAsync((VehicleDTO)null);
+
+        // Act
+        var result = await controller.Delete(vehicleId, maintenanceId);
+
+        // Assert
+
+        var notFoundObjectResult = Assert.IsType<NotFoundObjectResult>(result);
+        Assert.Equal($"Vehicle with id {vehicleId} was not found", notFoundObjectResult.Value);
+    }
+
+    [Fact]
+    public async Task Delete_NonExistingRecord_ReturnsNotFound()
+    {
+        // Arrange
+        int vehicleId = 1;
+        int maintenanceId = 1;
+        var vehicle = new VehicleDTO();
+
+        mockVehicleApiService.Setup(s => s.GetVehicleById(vehicleId))
+            .ReturnsAsync(vehicle);
+        mockRepository.Setup(r => r.CheckRecordExists(maintenanceId))
+            .ReturnsAsync(false);
+
+        // Act
+        var result = await controller.Delete(vehicleId, maintenanceId);
+
+        // Assert
+
+        Assert.IsType<NotFoundResult>(result);
     }
 }
 
